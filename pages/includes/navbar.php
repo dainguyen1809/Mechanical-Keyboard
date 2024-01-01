@@ -20,24 +20,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="./assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="./assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../../assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- Spinner Start -->
-    <!-- <div id="spinner"
+    <div id="spinner"
         class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
-    </div> -->
+    </div>
     <!-- Spinner End -->
 
 
@@ -60,8 +60,8 @@
         </div>
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.html" class="navbar-brand">
-                    <h1 class="text-primary display-6">Mechanical Keyboard</h1>
+                <a href="../../index.php" class="navbar-brand">
+                    <h1 class="text-primary display-6">Keyzone</h1>
                 </a>
                 <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -69,19 +69,17 @@
                 </button>
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
-                        <div class="nav-item dropdown">
+                        <a href="../../index.php" class="nav-item nav-link active">Home</a>
+                        <a href="../pages/shop.php" class="nav-item nav-link">Shop</a>
+                        <a href="../pages/cart.php" class="nav-item nav-link">Cart</a>
+                        <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="cart.html" class="dropdown-item">Cart</a>
-                                <a href="chackout.html" class="dropdown-item">Chackout</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
+                                <a href="chackout.php" class="dropdown-item">Chackout</a>
+                                <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                             </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div> -->
+                        <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button
@@ -94,7 +92,7 @@
                                 class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                                 style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                         </a>
-                        <a href="#" class="my-auto">
+                        <a href="./account/signin.php" class="my-auto">
                             <i class="fas fa-user fa-2x"></i>
                         </a>
                     </div>

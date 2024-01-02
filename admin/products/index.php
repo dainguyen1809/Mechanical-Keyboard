@@ -2,10 +2,28 @@
 
 <?php 
     require '../../config/connect.php';
+
+    $pages = 1;
+    if(isset($_GET['pages'])){
+        $pages = $_GET['pages'];
+    }
+
+    $sql_num_prods = "select count(*) from products";
+    $arr_num_prods = mysqli_query($conn, $sql_num_prods);
+    $result_num_prod = mysqli_fetch_array($arr_num_prods);
+    $num_prods = $result_num_prod['count(*)'];
+
+    $num_prods_on_pages = 3;
+
+    $num_pages = ceil($num_prods / $num_prods_on_pages);
+
+    $skip_pages = $num_prods_on_pages * ($pages - 1);
+
     $sql = "select products.*,
     manufacturers.manufacturers_name as manufacturer_name
     from products
-    join manufacturers on manufacturers.id = products.manufacturer_id";
+    join manufacturers on manufacturers.id = products.manufacturer_id
+    limit $num_prods_on_pages offset $skip_pages";
     $result = mysqli_query($conn, $sql);
     
 ?>
@@ -49,7 +67,9 @@
                     <tbody>
                         <?php foreach($result as $row){?>
                         <tr>
-                            <td><?php echo $row['product_name'];?></td>
+                            <td>
+                                <a href="detail.php?id=<?php echo $row['id'];?>"><?php echo $row['product_name'];?></a>
+                            </td>
                             <td><img src="../../assets/temp/imgs/<?php echo $row['photos']?>" height="200" alt=""></td>
                             <td><?php echo $row['price'];?>K</td>
                             <td><?php echo $row['manufacturer_name'];?></td>
@@ -66,9 +86,19 @@
                     </tbody>
                 </table>
             </div>
+            <div class="row text-start pt-5 border-top">
+                <div class="col-md-12">
+                    <div class="custom-pagination">
+                        <?php for($i = 1; $i <= $num_pages; $i++){?>
+                        <a class="btn btn-outline-secondary" href="?pages=<?php echo $i?>">
+                            <?php echo $i?>
+                        </a>
+                        <?php }?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
 <!-- /.container-fluid -->
 

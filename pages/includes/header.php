@@ -1,3 +1,9 @@
+<?php 
+    require '../config/connect.php';
+    $sql = "select * from manufacturers";
+    $result = mysqli_query($conn, $sql);
+    $each = mysqli_fetch_array($result);
+?>
 <!-- Hero Start -->
 <div class="container-fluid py-5 mb-5 hero-header">
     <div class="container py-5">
@@ -17,14 +23,23 @@
                 <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active rounded">
-                            <img src="../assets/img/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded"
-                                alt="First slide">
-                            <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a>
+                            <img src="../assets/temp/imgs/17041749078-1701677109746.webp"
+                                class="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide">
+                            <a href="#" class="btn px-4 py-2 text-white rounded">
+                                <?php echo $each['manufacturers_name'];?>
+                            </a>
                         </div>
                         <div class="carousel-item rounded">
-                            <img src="../assets/img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded"
+                            <img src="../assets/temp/imgs/17041818184.webp" class="img-fluid w-100 h-100 rounded"
                                 alt="Second slide">
-                            <a href="#" class="btn px-4 py-2 text-white rounded">Vesitables</a>
+                            <a href="#"
+                                class="btn px-4 py-2 text-white rounded"><?php echo $each['manufacturers_name'];?></a>
+                        </div>
+                        <div class="carousel-item rounded">
+                            <img src="../assets/temp/imgs/17041814911.webp" class="img-fluid w-100 h-100 rounded"
+                                alt="Second slide">
+                            <a href="#"
+                                class="btn px-4 py-2 text-white rounded"><?php echo $each['manufacturers_name'];?></a>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"

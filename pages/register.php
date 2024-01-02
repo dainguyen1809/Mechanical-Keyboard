@@ -1,4 +1,4 @@
-<?php include '../includes/navbar.php';?>
+<?php include './includes/navbar.php';?>
 
 <div class="container pt-5">
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -60,4 +60,4 @@
     </div>
 </div>
 
-<?php include '../includes/footer.php';?>
+<?php include './includes/footer.php';?>

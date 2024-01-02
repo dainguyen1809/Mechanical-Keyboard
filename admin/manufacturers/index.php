@@ -85,15 +85,15 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-        <div class="row text-start pt-5 border-top">
-            <div class="col-md-12">
-                <div class="custom-pagination">
-                    <?php for($i = 1; $i <= $num_pages; $i++){?>
-                    <a class="btn btn-outline-secondary" href="?pages=<?php echo $i?>">
-                        <?php echo $i?>
-                    </a>
-                    <?php }?>
+            <div class="row text-start pt-5 border-top">
+                <div class="col-md-12">
+                    <div class="custom-pagination">
+                        <?php for($i = 1; $i <= $num_pages; $i++){?>
+                        <a class="btn btn-outline-secondary" href="?pages=<?php echo $i?>">
+                            <?php echo $i?>
+                        </a>
+                        <?php }?>
+                    </div>
                 </div>
             </div>
         </div>

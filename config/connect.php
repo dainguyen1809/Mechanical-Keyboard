@@ -6,6 +6,4 @@ $check = mysqli_error($conn);
 
 if($check){
     die($check);
-}else{
-    echo "success";
 }

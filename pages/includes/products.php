@@ -51,9 +51,9 @@
                     <div class="row g-4">
                         <div class="col-lg-12">
                             <div class="row g-4">
-                                <a href="../pages/detail.php">
-                                    <?php foreach($result as $each) {?>
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                <?php foreach($result as $each) {?>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <a href="../pages/detail.php?id=<?php echo $each['id']; ?>">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
                                                 <img src="../assets/temp/imgs/<?php echo $each['photos'];?>"
@@ -78,9 +78,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <?php }?>
-                                </a>
+                                    </a>
+                                </div>
+                                <?php }?>
                             </div>
                         </div>
                     </div>

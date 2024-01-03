@@ -8,7 +8,7 @@
         $pages = $_GET['pages'];
     }
 
-    $sql_num_prods = "select count(*) from products";
+    $sql_num_prods = "select count(*) from products where product_name like '%$search%'";
     $arr_num_prods = mysqli_query($conn, $sql_num_prods);
     $result_num_prod = mysqli_fetch_array($arr_num_prods);
     $num_prods = $result_num_prod['count(*)'];
@@ -23,6 +23,7 @@
     manufacturers.manufacturers_name as manufacturer_name
     from products
     join manufacturers on manufacturers.id = products.manufacturer_id
+    where products.product_name like '%$search%'
     limit $num_prods_on_pages offset $skip_pages";
     $result = mysqli_query($conn, $sql);
     
@@ -90,7 +91,7 @@
                 <div class="col-md-12">
                     <div class="custom-pagination">
                         <?php for($i = 1; $i <= $num_pages; $i++){?>
-                        <a class="btn btn-outline-secondary" href="?pages=<?php echo $i?>">
+                        <a class="btn btn-outline-secondary" href="?pages=<?php echo $i?>&search=<?php echo $search?>">
                             <?php echo $i?>
                         </a>
                         <?php }?>

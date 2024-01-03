@@ -7,10 +7,31 @@
         <?php
             require '../config/connect.php';
             
+            $pages = 1;
+            if(isset($_GET['pages'])){
+                $pages = $_GET['pages'];
+            }
+
+            $search = '';
+            if(isset($_GET['search'])){
+                $search = $_GET['search'];
+            }
+
+            $sql_num_prods = "select count(*) from products where product_name like '%$search%'";
+            $arr_num_prods = mysqli_query($conn, $sql_num_prods);
+            $result_num_prods = mysqli_fetch_array($arr_num_prods);
+            $num_prods = $result_num_prods['count(*)'];
+            $num_prods_on_pages = 6;
+            
+            $num_pages = ceil($num_prods / $num_prods_on_pages);
+            $skip_pages = $num_prods_on_pages * ($pages - 1);
+            
             $sql = "select products.*,
             manufacturers.manufacturers_name as manufacturer_name
             from products
-            join manufacturers on manufacturers.id = products.manufacturer_id";
+            join manufacturers on manufacturers.id = products.manufacturer_id
+            where products.product_name like '%$search%'
+            limit $num_prods_on_pages offset $skip_pages";
             $result = mysqli_query($conn, $sql);
         ?>
 
@@ -22,12 +43,14 @@
                     <div class="col-lg-12">
                         <div class="row g-4">
                             <div class="col-xl-3">
-                                <div class="input-group w-100 mx-auto d-flex">
-                                    <input type="search" class="form-control p-3" placeholder="keywords"
-                                        aria-describedby="search-icon-1">
-                                    <span id="search-icon-1" class="input-group-text p-3"><i
-                                            class="fa fa-search"></i></span>
-                                </div>
+                                <form>
+                                    <div class="input-group w-100 mx-auto d-flex">
+                                        <input type="search" class="form-control p-3" placeholder="keywords"
+                                            name="search" value="<?php echo $search;?>">
+                                        <span id="search-icon-1" class="input-group-text p-3"><i
+                                                class="fa fa-search"></i></span>
+                                    </div>
+                                </form>
                             </div>
                             <div class="col-6"></div>
                             <div class="col-xl-3">
@@ -115,14 +138,16 @@
 
                                     <div class="col-12">
                                         <div class="pagination d-flex justify-content-center mt-5">
-                                            <a href="#" class="rounded">&laquo;</a>
-                                            <a href="#" class="active rounded">1</a>
-                                            <a href="#" class="rounded">2</a>
-                                            <a href="#" class="rounded">3</a>
-                                            <a href="#" class="rounded">4</a>
-                                            <a href="#" class="rounded">5</a>
-                                            <a href="#" class="rounded">6</a>
-                                            <a href="#" class="rounded">&raquo;</a>
+                                            <?php for($i = 1; $i <= $num_pages; $i++){?>
+                                            <?php if($i == 1){?>
+                                            <a href="?pages=<?php echo $i?>&search=<?php echo $search?>"
+                                                class="active rounded"><?php echo $i?></a>
+                                            <?php } else if($i >= 2){?>
+                                            <a href="?pages=<?php echo $i?>&search=<?php echo $search?>">
+                                                <?php echo $i?>
+                                            </a>
+                                            <?php }?>
+                                            <?php }?>
                                         </div>
                                     </div>
                                 </div>

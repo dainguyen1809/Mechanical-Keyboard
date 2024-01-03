@@ -7,8 +7,8 @@
     if(isset($_GET['pages'])){
         $pages = $_GET['pages'];
     }
-    
-    $sql_num_manufacturers = "select count(*) from manufacturers";
+
+    $sql_num_manufacturers = "select count(*) from manufacturers where manufacturers_name like '%$search%'";
     $arr_num_manufacturers = mysqli_query($conn, $sql_num_manufacturers);
     $result_num_manufacturers = mysqli_fetch_array($arr_num_manufacturers);
     $num_manufacturers = $result_num_manufacturers['count(*)'];
@@ -19,6 +19,7 @@
     $skip_pages = $num_manu_on_pages* ($pages - 1);
     
     $sql = "select * from manufacturers
+    where manufacturers_name like '%$search%'
     limit $num_manu_on_pages offset $skip_pages
     ";
     $result = mysqli_query($conn, $sql);

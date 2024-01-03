@@ -1,1 +1,1 @@
-<?php include 'admin/root/index.php';?>
+<?php include 'root/index.php';?>

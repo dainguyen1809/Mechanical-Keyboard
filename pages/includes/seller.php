@@ -24,7 +24,7 @@
                                 alt="">
                         </div>
                         <div class="col-6">
-                            <a href="#" class="h5">
+                            <a href="detail.php?id=<?php echo $each['id'];?>" class="h5">
                                 <?php echo $each['product_name'];?>
                             </a>
                             <div class="d-flex my-3">

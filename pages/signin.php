@@ -13,15 +13,20 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                <form class="user">
+                                <?php if(isset($_GET['error'])){ ?>
+                                <span class="text-danger">
+                                    <?php echo $_GET['error'];?>
+                                </span>
+                                <?php }?>
+                                <form class="user" method="post" action="./handlers/process_signin.php">
                                     <div class="form-group mb-4">
                                         <input type="email" class="form-control form-control-user"
                                             id="exampleInputEmail" aria-describedby="emailHelp"
-                                            placeholder="Enter Email Address..." />
+                                            placeholder="Enter Email Address..." name="email" />
                                     </div>
                                     <div class="form-group mb-4">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password" />
+                                            id="exampleInputPassword" placeholder="Password" name="password" />
                                     </div>
                                     <div class="form-group  mb-4">
                                         <div class="custom-control custom-checkbox small">
@@ -29,9 +34,9 @@
                                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                                         </div>
                                     </div>
-                                    <a href="#" class="btn btn-primary btn-user btn-block">
-                                        Login
-                                    </a>
+                                    <button class="btn btn-primary btn-user btn-block">
+                                        Signin
+                                    </button>
                                     <hr />
                                     <a href="#" class="btn btn-google btn-user btn-block">
                                         <i class="fab fa-google fa-fw"></i> Login with Google
@@ -46,7 +51,7 @@
                                     <a class="small" href="#">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.php">Create an Account!</a>
+                                    <a class="small" href="signup.php">Create an Account!</a>
                                 </div>
                             </div>
                         </div>

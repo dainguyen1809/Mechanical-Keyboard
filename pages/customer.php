@@ -1,6 +1,6 @@
 <?php session_start();
       if(empty($_SESSION['id'])){
-        header("location: ./404.php");
+        header("location: 404.php");
         exit;
     }
 ?>
@@ -24,7 +24,7 @@
         <div class="col-6">
             <h3>
                 <p class="text-secondary">Information Account</p>
-                <p>Full Name: <span><?php echo $_SESSION['customer_name'];?></span></p>
+                <p>Customer Name: <span><?php echo $_SESSION['customer_name'];?></span></p>
             </h3>
         </div>
     </div>

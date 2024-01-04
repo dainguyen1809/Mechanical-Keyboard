@@ -1,3 +1,30 @@
+<?php
+    session_start();
+
+    if(isset($_COOKIE['remember'])){
+        $token = $_COOKIE['remember'];
+        
+        require '../config/connect.php';
+        
+        $sql = "select * from customers
+        where token = '$token' limit 1";
+        $result = mysqli_query($conn, $sql);
+
+        $num_rows = mysqli_num_rows($result);
+
+        if($num_rows == 1){
+            $row = mysqli_fetch_array($result);
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['customer_name'] = $row['customer_name'];
+        }
+    }
+
+    if(isset($_SESSION['id'])){
+        header("location: customer.php");
+        exit;
+    }
+?>
+
 <?php include './includes/navbar.php';?>
 
 <div class="container pt-5">
@@ -30,7 +57,8 @@
                                     </div>
                                     <div class="form-group  mb-4">
                                         <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck" />
+                                            <input type="checkbox" class="custom-control-input" id="customCheck"
+                                                name="remember" />
                                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                                         </div>
                                     </div>

@@ -1,6 +1,5 @@
 <?php 
     session_start();
-  
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +94,7 @@
                                 class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                                 style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                         </a>
-                        <?php if(isset($_SESSION['customer_name'])){?>
+                        <?php if(isset($_SESSION['id'])){?>
                         <a href="../pages/customer.php"><i class="fas fa-user fa-2x"></i></a>
                         <?php } else {?>
                         <a href="signin.php" class="my-auto">

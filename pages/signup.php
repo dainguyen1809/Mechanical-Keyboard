@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <?php include './includes/navbar.php';?>
 
 
@@ -12,10 +14,11 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                         </div>
-                        <?php if(isset($_GET['error'])){ ?>
+                        <?php if(isset($_SESSION['error'])){ ?>
                         <span class="text-danger">
-                            <?php echo $_GET['error'];?>
+                            <?php echo $_SESSION['error'];?>
                         </span>
+                        <?php unset($_SESSION['error']);?>
                         <?php }?>
                         <form class="user" method="post" action="./handlers/process_signup.php">
                             <div class="form-group mb-4">

@@ -12,7 +12,9 @@ $result = mysqli_query($conn, $sql);
 $num_row = mysqli_fetch_array($result)['count(*)'];
 
 if($num_row == 1){
-    header("location: ../signup.php?error=email has been used");
+    session_start();
+    $_SESSION['error'] = 'email has been used';
+    header("location: ../signup.php");
     exit;
 } 
 $sql = "insert into customers(customer_name, email, password)

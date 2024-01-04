@@ -1,1 +1,0 @@
-<?php include 'root/index.php';?>

@@ -1,4 +1,2 @@
-/assets/temp/imgs
-*.scss
-*.css
-/admin/assets/vendor
+/assets
+admin/assets

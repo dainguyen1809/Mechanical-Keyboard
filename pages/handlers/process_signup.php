@@ -5,6 +5,8 @@ require '../../config/connect.php';
 $customer_name = $_POST['customer_name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
 
 $sql = "select count(*) from customers
 where email = '$email'";
@@ -17,8 +19,8 @@ if($num_row == 1){
     header("location: ../signup.php");
     exit;
 } 
-$sql = "insert into customers(customer_name, email, password)
-values('$customer_name', '$email', '$password')";
+$sql = "insert into customers(customer_name, email, password,phone,address)
+values('$customer_name', '$email', '$password', '$phone', '$address')";
 mysqli_query($conn, $sql);
 
 //initialize session

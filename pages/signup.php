@@ -1,8 +1,4 @@
-<?php session_start();?>
-
 <?php include './includes/navbar.php';?>
-
-
 
 <div class="container pt-5">
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -36,6 +32,14 @@
                                     <input type="password" class="form-control form-control-user"
                                         id="exampleRepeatPassword" placeholder="Repeat Password">
                                 </div> -->
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="text" class="form-control form-control-user" id=""
+                                    placeholder="Phone number" name="phone">
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="text" class="form-control form-control-user" id="" placeholder="Address"
+                                    name="address">
                             </div>
                             <button class="btn btn-primary btn-user btn-block">
                                 Register Account

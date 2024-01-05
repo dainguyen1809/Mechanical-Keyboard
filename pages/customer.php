@@ -1,15 +1,22 @@
-<?php session_start();
+<?php include './includes/navbar.php';?>
+
+<?php 
       if(empty($_SESSION['id'])){
         header("location: 404.php");
         exit;
     }
 ?>
 
-<?php include './includes/navbar.php';?>
 <?php include './includes/header.php';?>
 <div class="container">
     <div class="row">
         <div class="col-6">
+            <?php if(isset($_SESSION['success'])){ ?>
+            <span class="text-success">
+                <?php echo $_SESSION['success'];?>
+            </span>
+            <?php unset($_SESSION['success']);?>
+            <?php }?>
             <h3>Account Page</h3>
             <h5>Hi&comma; <span><?php echo $_SESSION['customer_name'];?>&excl;</span></h5>
             <div class="row">

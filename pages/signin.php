@@ -1,5 +1,7 @@
+<?php include './includes/navbar.php';?>
+
+
 <?php
-    session_start();
 
     if(isset($_COOKIE['remember'])){
         $token = $_COOKIE['remember'];
@@ -25,7 +27,6 @@
     }
 ?>
 
-<?php include './includes/navbar.php';?>
 
 <div class="container pt-5">
     <!-- Outer Row -->
@@ -40,10 +41,11 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                <?php if(isset($_GET['error'])){ ?>
+                                <?php if(isset($_SESSION['error'])){ ?>
                                 <span class="text-danger">
-                                    <?php echo $_GET['error'];?>
+                                    <?php echo $_SESSION['error'];?>
                                 </span>
+                                <?php unset($_SESSION['error']);?>
                                 <?php }?>
                                 <form class="user" method="post" action="./handlers/process_signin.php">
                                     <div class="form-group mb-4">

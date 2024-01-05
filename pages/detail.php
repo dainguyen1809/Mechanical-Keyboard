@@ -63,7 +63,8 @@
                                 </button>
                             </div>
                         </div>
-                        <a href="#" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
+                        <a href="./handlers/add_to_cart.php?id=<?php echo $each['id'];?>"
+                            class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
                                 class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                     </div>
                     <div class="col-lg-12">

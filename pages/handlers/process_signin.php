@@ -32,6 +32,8 @@ if($num_rows == 1){
         mysqli_query($conn, $sql);
         setcookie('remember', $token, time() + (86400 * 30));
     } 
+    header("location: ../index.php");
+    exit;
 }
 
-// header("location: ../signin.php?error=username or password is incorrect");
+header("location: ../signin.php?error=username or password is incorrect");

@@ -2,6 +2,10 @@
     session_start();
     $cart = $_SESSION['cart'];
 
+    if(empty($_SESSION['id'])){
+        header("location: signin.php");
+        exit;
+    }
     
 ?>
 

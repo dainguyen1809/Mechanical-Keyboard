@@ -2,7 +2,11 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2021</span>
+            <p>Copyright &copy; Your Website <span id="year">
+                    <script>
+                    document.getElementById("year").innerHTML = new Date().getFullYear();
+                    </script>
+                </span></p>
         </div>
     </div>
 </footer>
@@ -30,10 +34,10 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body">Select "Sign Out" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="../process_signout.php">Sign Out</a>
             </div>
         </div>
     </div>

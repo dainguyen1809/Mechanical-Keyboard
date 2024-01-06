@@ -39,6 +39,7 @@
                         <h6 class="collapse-header">Managers</h6>
                         <a class="collapse-item" href="../products/">Products</a>
                         <a class="collapse-item" href="../manufacturers/">Manufacturers</a>
+                        <a class="collapse-item" href="../orders/">Orders</a>
                     </div>
                 </div>
             </li>

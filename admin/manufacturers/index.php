@@ -1,3 +1,4 @@
+<?php require '../check_admin.php';?>
 <?php include '../includes/navbar.php';?>
 
 <?php 

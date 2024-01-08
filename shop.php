@@ -5,7 +5,7 @@
         <?php include './includes/header.php';?>
 
         <?php
-            require '../config/connect.php';
+            require './config/connect.php';
             
             $pages = 1;
             if(isset($_GET['pages'])){
@@ -110,7 +110,7 @@
                                         <a href="detail.php?id=<?php echo $each['id'];?>">
                                             <div class="rounded position-relative fruite-item">
                                                 <div class="fruite-img">
-                                                    <img src="../assets/temp/imgs/<?php echo $each['photos'];?>"
+                                                    <img src="./assets/temp/imgs/<?php echo $each['photos'];?>"
                                                         class="img-fluid w-100 rounded-top" alt="">
                                                 </div>
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"

@@ -1,6 +1,6 @@
 <?php
 
-require '../../config/connect.php';
+require '../config/connect.php';
 
 $customer_name = $_POST['customer_name'];
 $email = $_POST['email'];
@@ -22,6 +22,14 @@ if($num_row == 1){
 $sql = "insert into customers(customer_name, email, password,phone,address)
 values('$customer_name', '$email', '$password', '$phone', '$address')";
 mysqli_query($conn, $sql);
+
+require '../mail.php';
+
+$title = "Đăng ký tài khoản thành công !";
+// $content = "Chào mừng bạn đến với <a href='https://kicap.vn'>Keyzone</a>!<br><h3>Store chuyên về bàn phím custom</h3>";
+$content = "Test feature send emali when customer register account";
+
+sendmail($email, $customer_name, $title, $content);
 
 //initialize session
 

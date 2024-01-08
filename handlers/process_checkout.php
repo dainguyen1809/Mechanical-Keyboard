@@ -7,7 +7,7 @@ $name_receiver = $_POST['name_receiver'];
 $address_receiver = $_POST['address_receiver'];
 $phone_receiver = $_POST['phone_receiver'];
 
-require '../../config/connect.php';
+require '../config/connect.php';
 
 $total_amount = 0;
 

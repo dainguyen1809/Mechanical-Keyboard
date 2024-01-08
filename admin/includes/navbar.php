@@ -1,4 +1,3 @@
-<?php require '../check_level.php';?>
 <!DOCTYPE html>
 <html lang="en">
 

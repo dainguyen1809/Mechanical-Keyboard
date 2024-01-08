@@ -4,10 +4,11 @@
       if(empty($_SESSION['id'])){
         header("location: 404.php");
         exit;
-    }
+      }
 ?>
 
 <?php include './includes/header.php';?>
+
 <div class="container">
     <div class="row">
         <div class="col-6">

@@ -5,7 +5,7 @@
 <?php include './includes/header.php';?>
 
 <?php
-    require '../config/connect.php';
+    require './config/connect.php';
 
     $id = $_GET['id'];
     
@@ -30,7 +30,7 @@
                     <div class="col-lg-6">
                         <div class="border rounded">
                             <a href="#">
-                                <img src="../assets/temp/imgs/<?php echo $each['photos'];?>" class="img-fluid rounded"
+                                <img src="./assets/temp/imgs/<?php echo $each['photos'];?>" class="img-fluid rounded"
                                     alt="Image">
                             </a>
                         </div>
@@ -84,7 +84,7 @@
                             </div>
                             <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
                                 <div class="d-flex">
-                                    <img src="../assets/img/avatar.jpg" class="img-fluid rounded-circle p-3"
+                                    <img src="./assets/img/avatar.jpg" class="img-fluid rounded-circle p-3"
                                         style="width: 100px; height: 100px;" alt="">
                                     <div class="">
                                         <p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex">
-                                    <img src="../assets/img/avatar.jpg" class="img-fluid rounded-circle p-3"
+                                    <img src="./assets/img/avatar.jpg" class="img-fluid rounded-circle p-3"
                                         style="width: 100px; height: 100px;" alt="">
                                     <div class="">
                                         <p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
@@ -199,7 +199,7 @@
                 </div>
             </div>
         </div>
-        <?php include '../repository/related_products.php';?>
+        <?php include './repository/related_products.php';?>
     </div>
 </div>
 <!-- Single Product End -->

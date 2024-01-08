@@ -13,7 +13,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="position-relative">
-                    <img src="../assets/temp/imgs/17041818184.webp" class="img-fluid w-100 rounded" alt="">
+                    <img src="./assets/temp/imgs/17041818184.webp" class="img-fluid w-100 rounded" alt="">
                     <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute"
                         style="width: 140px; height: 140px; top: 0; left: 0;">
                         <h1 style="font-size: 80px;">1</h1>

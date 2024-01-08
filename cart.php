@@ -33,54 +33,54 @@
                 </thead>
                 <tbody>
                     <?php if(!empty($_SESSION['cart'])){?>
-                        <?php foreach($cart as $id => $row){?>
-                        <tr>
-                            <th scope="row">
-                                <div class="d-flex align-items-center">
-                                    <img src="../assets/temp/imgs/<?php echo $row['photos'];?>"
-                                        class="img-fluid me-5 rounded" style="width: 150px; height: 150px;" alt="">
+                    <?php foreach($cart as $id => $row){?>
+                    <tr>
+                        <th scope="row">
+                            <div class="d-flex align-items-center">
+                                <img src="./assets/temp/imgs/<?php echo $row['photos'];?>"
+                                    class="img-fluid me-5 rounded" style="width: 150px; height: 150px;" alt="">
+                            </div>
+                        </th>
+                        <td>
+                            <p class="mb-0 mt-4"><?php echo $row['product_name'];?></p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4"><?php echo $row['price'];?>K</p>
+                        </td>
+                        <td>
+                            <div class="input-group quantity mt-4" style="width: 100px;">
+                                <div class="input-group-btn">
+                                    <a href="./handlers/update_quantity_cart.php?id=<?php echo $id?>&type=decrease"
+                                        class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
                                 </div>
-                            </th>
-                            <td>
-                                <p class="mb-0 mt-4"><?php echo $row['product_name'];?></p>
-                            </td>
-                            <td>
-                                <p class="mb-0 mt-4"><?php echo $row['price'];?>K</p>
-                            </td>
-                            <td>
-                                <div class="input-group quantity mt-4" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <a href="./handlers/update_quantity_cart.php?id=<?php echo $id?>&type=decrease"
-                                            class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                            <i class="fa fa-minus"></i>
-                                        </a>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm text-center border-0"
-                                        value="<?php echo $row['quantity'];?>">
-                                    <div class="input-group-btn">
-                                        <a href="./handlers/update_quantity_cart.php?id=<?php echo $id?>&type=increase"
-                                            class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                            <i class="fa fa-plus"></i>
-                                        </a>
-                                    </div>
+                                <input type="text" class="form-control form-control-sm text-center border-0"
+                                    value="<?php echo $row['quantity'];?>">
+                                <div class="input-group-btn">
+                                    <a href="./handlers/update_quantity_cart.php?id=<?php echo $id?>&type=increase"
+                                        class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
                                 </div>
+                            </div>
 
-                            </td>
-                            <td>
-                                <p class="mb-0 mt-4"><?php
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4"><?php
                                     $total = $row['price'] * $row['quantity'];
                                         echo $total;
                                         $total_amount += $total;
                                     ?>K</p>
-                            </td>
-                            <td>
-                                <a href="./handlers/remove_cart.php?id=<?php echo $id?>"
-                                    class="btn btn-md rounded-circle bg-light border mt-4">
-                                    <i class="fa fa-times text-danger"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php }?>
+                        </td>
+                        <td>
+                            <a href="./handlers/remove_cart.php?id=<?php echo $id?>"
+                                class="btn btn-md rounded-circle bg-light border mt-4">
+                                <i class="fa fa-times text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <?php }?>
                     <?php }?>
                 </tbody>
             </table>
@@ -106,7 +106,7 @@
         <?php
             $id = $_SESSION['id'];
             
-            require '../config/connect.php';
+            require './config/connect.php';
 
             $sql = "select * from customers where id = '$id'";
             $result = mysqli_query($conn, $sql);

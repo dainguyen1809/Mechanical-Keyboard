@@ -19,5 +19,7 @@ if(mysqli_num_rows($result) == 1){
     header("location: root/");
     exit;
 }
+mysqli_close($conn);
 
 header("location: index.php?error=Username or Passowrd is incorrect!");
+exit;

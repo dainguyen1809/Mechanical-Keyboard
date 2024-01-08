@@ -1,5 +1,5 @@
 <?php 
-    require '../config/connect.php';
+    require './config/connect.php';
     
     $sql = "select products.*,
     manufacturers.manufacturers_name as manufacturer_name
@@ -20,7 +20,7 @@
                 <div class="p-4 rounded bg-light">
                     <div class="row align-items-center">
                         <div class="col-6">
-                            <img src="../assets/temp/imgs/<?php echo $each['photos'];?>" class="img-fluid rounded w-100"
+                            <img src="./assets/temp/imgs/<?php echo $each['photos'];?>" class="img-fluid rounded w-100"
                                 alt="">
                         </div>
                         <div class="col-6">
@@ -48,7 +48,7 @@
                 <?php foreach($result as $each){?>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="text-center">
-                        <img src="../assets/temp/imgs/<?php echo $each['photos'];?>" class="img-fluid rounded" alt="">
+                        <img src="./assets/temp/imgs/<?php echo $each['photos'];?>" class="img-fluid rounded" alt="">
                         <div class="py-4">
                             <a href="#" class="h5">Organic Tomato</a>
                             <div class="d-flex my-3 justify-content-center">

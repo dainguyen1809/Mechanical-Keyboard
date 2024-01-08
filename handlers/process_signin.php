@@ -1,6 +1,6 @@
 <?php
 
-require '../../config/connect.php';
+require '../config/connect.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];

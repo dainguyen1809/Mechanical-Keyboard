@@ -1,6 +1,6 @@
 <?php
 
-require '../../config/connect.php';
+require '../config/connect.php';
 
 session_start();
 
@@ -12,7 +12,7 @@ $id = $_GET['id'];
 if(empty($_SESSION['cart'][$id])){
     //case: nothing in the cart
     // add id items
-    require '../../config/connect.php';
+    require '../config/connect.php';
 
     $sql = "select * from products where id = '$id'";
     $result = mysqli_query($conn, $sql);
@@ -43,5 +43,5 @@ if(empty($_SESSION['cart'][$id])){
 }
 
 header("location: ../cart.php");
-
+mysqli_close($conn);
 // echo json_encode($_SESSION['cart']);

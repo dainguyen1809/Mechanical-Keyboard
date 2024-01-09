@@ -14,5 +14,3 @@ if($type === 'decrease'){
 }else{
     $_SESSION['cart'][$id]['quantity']++;
 }
-header("location: ../cart.php");
-exit;

@@ -183,16 +183,7 @@
                         <div class="mb-4">
                             <h4>Categories</h4>
                             <ul class="list-unstyled fruite-categorie">
-                                <?php foreach($manufacturers as $each){?>
-                                <li>
-                                    <div class="d-flex justify-content-between fruite-name">
-                                        <a href="#">
-                                            <?php echo $each['manufacturers_name'];?>
-                                        </a>
-                                        <span>(3)</span>
-                                    </div>
-                                </li>
-                                <?php }?>
+                                <?php require './repository/categories.php';?>
                             </ul>
                         </div>
                     </div>

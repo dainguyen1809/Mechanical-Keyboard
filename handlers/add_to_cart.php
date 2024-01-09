@@ -1,10 +1,17 @@
 <?php
+try {
+    //code...
 
 require '../config/connect.php';
 
 session_start();
 
 // unset($_SESSION['cart']);
+
+if(empty($_SESSION['id'])){
+    throw new Exception("ID Does not exist!");
+    
+}
 
 $id = $_GET['id'];
 
@@ -42,6 +49,13 @@ if(empty($_SESSION['cart'][$id])){
     $_SESSION['cart'][$id]['quantity']++;
 }
 
-header("location: ../cart.php");
+// header("location: ../cart.php");
 mysqli_close($conn);
 // echo json_encode($_SESSION['cart']);
+
+echo 1;
+
+} catch (\Throwable $th) {
+   echo $th->getMessage();
+}
+   

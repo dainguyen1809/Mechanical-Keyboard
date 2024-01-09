@@ -27,7 +27,7 @@
                         <th scope="col">Products Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
-                        <th scope="col">Total</th>
+                        <th scope="col">Price</th>
                         <th scope="col">Remove</th>
                     </tr>
                 </thead>
@@ -45,38 +45,46 @@
                             <p class="mb-0 mt-4"><?php echo $row['product_name'];?></p>
                         </td>
                         <td>
-                            <p class="mb-0 mt-4"><?php echo $row['price'];?>K</p>
+                            <p class="mb-0 mt-4 price-items"><span><?php echo $row['price'];?>K</span></p>
                         </td>
                         <td>
-                            <div class="input-group quantity mt-4" style="width: 100px;">
+                            <div class="d-flex input-group mt-4" style="width: 100px;">
                                 <div class="input-group-btn">
-                                    <a href="./handlers/update_quantity_cart.php?id=<?php echo $id?>&type=decrease"
-                                        class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                    <button
+                                        class="btn-update-quantity btn btn-sm btn-plus rounded-circle bg-light border"
+                                        data-id='<?php echo $id?>' data-type='decrease'>
                                         <i class="fa fa-minus"></i>
-                                    </a>
+                                    </button>
                                 </div>
-                                <input type="text" class="form-control form-control-sm text-center border-0"
-                                    value="<?php echo $row['quantity'];?>">
+                                <p class="form-control form-control-sm text-center border-0">
+                                    <span class="quantity"><?php echo $row['quantity'];?></span>
+                                </p>
                                 <div class="input-group-btn">
-                                    <a href="./handlers/update_quantity_cart.php?id=<?php echo $id?>&type=increase"
-                                        class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                    <button
+                                        class="btn-update-quantity btn btn-sm btn-plus rounded-circle bg-light border"
+                                        data-id='<?php echo $id?>' data-type='increase'>
                                         <i class="fa fa-plus"></i>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
-
                         </td>
                         <td>
-                            <p class="mb-0 mt-4"><?php
+                            <p class="mb-0 mt-4">
+                                <span class="total">
+                                    <?php
                                     $total = $row['price'] * $row['quantity'];
                                         echo $total;
                                         $total_amount += $total;
-                                    ?>K</p>
+                                    ?>
+                                </span>
+                            </p>
                         </td>
                         <td>
-                            <a href="./handlers/remove_cart.php?id=<?php echo $id?>"
+                            <button class="btn-remove btn btn-danger mb-0 mt-4" data-id='<?php echo $id?>'>
+                                <i class="fa fa-times"></i>
+                            </button>
+                            <a href=" ./handlers/remove_cart.php?id=<?php echo $id?>"
                                 class="btn btn-md rounded-circle bg-light border mt-4">
-                                <i class="fa fa-times text-danger"></i>
                             </a>
                         </td>
                     </tr>
@@ -86,8 +94,9 @@
             </table>
             <div class="col">
                 <div class="col-12 text-end fs-4">
-                    <p class="text-secondary">Total amount: <span>
-                            <?php echo $total_amount;?>K
+                    <p class="text-secondary">Total amount:
+                        <span id="total_amount">
+                            <?php echo $total_amount;?>
                         </span>
                     </p>
                 </div>

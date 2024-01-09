@@ -53,7 +53,7 @@
                             <div class="row g-4">
                                 <?php foreach($result as $each) {?>
                                 <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <a href="../pages/detail.php?id=<?php echo $each['id']; ?>">
+                                    <a href="./detail.php?id=<?php echo $each['id']; ?>">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
                                                 <img src="./assets/temp/imgs/<?php echo $each['photos'];?>"

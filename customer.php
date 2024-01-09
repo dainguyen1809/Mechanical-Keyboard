@@ -24,9 +24,15 @@
                 <h3>
                     <p class="text-secondary">Information Account</p>
                 </h3>
-                <a href="#">Your Order</a>
-                <a href="#">Change Password</a>
-                <a href="./handlers/signout.php">SignOut</a>
+                <div class="row mb-4">
+
+                    <a class="btn btn-primary col-6"
+                        href="customer_ordered.php?customer id=<?php echo $_SESSION['id'];?>">Your
+                        Order</a>
+                </div>
+                <div class="row mb-4">
+                    <a class="btn btn-secondary col-6" href="./handlers/signout.php">SignOut</a>
+                </div>
             </div>
         </div>
         <div class="col-6">

@@ -35,5 +35,4 @@ if($num_rows == 1){
     header("location: ../index.php");
     exit;
 }
-
-header("location: ../signin.php?error=username or password is incorrect");
+header("location: ../signin.php?err=username or password is incorrect");

@@ -72,10 +72,10 @@
                                                         <?php echo $each['price'];?>K
                                                     </p>
                                                     <?php if(isset($_SESSION['id'])){?>
-                                                    <a href="./handlers/add_to_cart.php?id=<?php echo $each['id'];?>"
-                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                    <button data-id="<?php echo $each['id'];?>"
+                                                        class="btn-add-to-cart btn border border-secondary rounded-pill px-3 text-primary"><i
                                                             class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                                        cart</a>
+                                                        cart</button>
                                                     <?php } else {?>
                                                     <a href="./signin.php"
                                                         class="btn border border-secondary rounded-pill px-3 text-primary"><i

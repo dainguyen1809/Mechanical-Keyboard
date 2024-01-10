@@ -83,9 +83,6 @@
                             <button class="btn-remove btn btn-danger mb-0 mt-4" data-id='<?php echo $id?>'>
                                 <i class="fa fa-times"></i>
                             </button>
-                            <a href=" ./handlers/remove_cart.php?id=<?php echo $id?>"
-                                class="btn btn-md rounded-circle bg-light border mt-4">
-                            </a>
                         </td>
                     </tr>
                     <?php }?>
